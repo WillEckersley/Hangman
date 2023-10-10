@@ -9,18 +9,24 @@ class Hangman:
         self.word_guessed = ["_" for letter in self.word]
         self.num_letters = len(self.word)
         self.list_of_guesses = []
+        self.word_guessed_string = ""
     
     def check_guess(self, guess): # method checks input 
         guess.lower()
         if guess in self.word:
-            for letter in self.word:
+            for index, letter in enumerate(self.word): # new conditional allows for itteration through indexes, facilitating addition of repeated letters to the self.word_guessed list.
                 if letter == guess:
-                    self.word_guessed[self.word.index(letter)] = guess # line cannot accomodate adding copies of same letter to word_guessed list. Requires fix.
+                    self.word_guessed[index] = guess 
+                    self.word_guessed_string = "".join([str(char) for char in self.word_guessed]) # create a comparison (string version of self.word_guessed) condition for self.word to trigger win althogh conditional in line 55 untriggered. Requires fix.
+                    print(f"Good guess! {guess} is in the word.")
                     print(self.word_guessed)
-            self.num_letters -= 1 
+                    print(self.word_guessed_string)
+            self.num_letters -= 1
+            print(self.num_letters)
         else:
             self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word.")
+            print(f"Letters tried: {self.list_of_guesses}")
             print(f"You have {self.num_lives} lives left.")
 
     def ask_for_input(self): # method requests input and checks validity.
@@ -46,7 +52,7 @@ def play_game(word_list):
             break
         elif game.num_letters > 0:
             game.ask_for_input()
-        elif game.num_lives != 0 and game.num_letters == 0:
+        elif game.word == game.word_guessed_string: # condition will not be met in this version. Requires fix. 
             print("Congratulations, you've won!")
             break
 
