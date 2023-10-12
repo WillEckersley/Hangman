@@ -1,4 +1,5 @@
 import random
+from wonderwords import RandomWord # Library that can randomly generate words. 
 
 class Hangman:
     
@@ -18,8 +19,8 @@ class Hangman:
                 if letter == guess:
                     self.word_guessed[index] = guess # if guessed letter is in input word, match the value of that letter to the index it has in the original input word in the guessed list. 
                     self.word_guessed_string = "".join([str(char) for char in self.word_guessed]) # string version of the guessed list to compare against original word. Used to trigger win condition when equal to input word. 
-                    print(f"\nGood guess! {guess} is in the word.") # use of '\n' to facilitated better output formatting. 
-                    print(f"Word:{self.word_guessed}")
+            print(f"\nGood guess! {guess} is in the word.") # use of '\n' to facilitated better output formatting. 
+            print(f"Word:{self.word_guessed}") # change indentation to prevent output printing twice when repeated letter correctly guessed. 
         else:
             self.num_lives -= 1
             self.list_of_guesses.append(guess)
@@ -58,4 +59,9 @@ def play_game(word_list):
             print(f"The word was: {game.word_guessed_string}")
             break
 
-play_game(["apple", "banana", "cherry", "damson", "tangerine", "blueberry", "strawberry", "grape", "melon", "lemon", "blackcurrent", "redcurrent", "orange", "blackberry", "lychee"]) # test the code multiple words.
+r = RandomWord() # code used to generate any random word from womderwords library
+r = r.word()
+game_list = []
+game_list.append(r)
+
+play_game(game_list)
