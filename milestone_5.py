@@ -3,7 +3,7 @@ from wonderwords import RandomWord # Library that can randomly generate words.
 
 class Hangman:
     
-    def __init__(self, word_list, num_lives=5): # instance attributes of the Hangman game class. 
+    def __init__(self, word_list, num_lives=10): # instance attributes of the Hangman game class. 
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(self.word_list)
@@ -41,7 +41,7 @@ class Hangman:
                 break
 
 def play_game(word_list):
-    num_lives = 5
+    num_lives = 10
     game = Hangman(word_list, num_lives)
     count = 1
     while count >= 1:
