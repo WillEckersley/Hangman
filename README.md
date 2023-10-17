@@ -1,7 +1,7 @@
 # Hangman
 My build of the classic game "Hangman".
 
-![](//Users/willeckersley/Projects/Repositories/Hangman/readme_images/title_gif.gif)
+![Alt text](https://file%252B.vscode-resource.vscode-cdn.net/Users/willeckersley/Projects/Repositories/Hangman/readme_images/title_gif.gif?version%253D1697531099051)
 
 ### Description
 Hangman is a classic game where the player tries to discover a mystery word using a mixture of guesswork and deduction. Traditionally, two human players play against each other. However, in this version, a single human player plays against a computer. 
