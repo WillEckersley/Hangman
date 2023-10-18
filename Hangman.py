@@ -1,4 +1,4 @@
-from wonderwords import RandomWord # Library that randomly generate words using .word() function. See line 60-1 for implementation. 
+from wonderwords import RandomWord # Library that randomly generates words using .word() function. See line 60-1 for implementation. 
 
 class Hangman:
     
