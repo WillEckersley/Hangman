@@ -4,7 +4,7 @@ My build of the classic game "Hangman".
 ![Alt text](readme_images/title_gif.gif)
 
 ### Description
-Hangman is a classic game where the player tries to discover a mystery word using a mixture of guesswork and deduction. Traditionally, two human players play against each other. However, in this version, a single human player plays against a computer. 
+Hangman is a classic game where a player tries to discover a mystery word using a mixture of guesswork and deduction. Traditionally, two human players play against each other. However, in this version, a single human player plays against a computer. 
 
 ### Walkthrough
 
