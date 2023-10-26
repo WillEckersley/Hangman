@@ -1,7 +1,9 @@
 from wonderwords import RandomWord # Library that randomly generate words using .word() function. See line 60-1 for implementation. 
 
+
 class Hangman:
     
+
     def __init__(self, word, num_lives=10): 
         self.num_lives = num_lives
         self.word = word
@@ -9,7 +11,15 @@ class Hangman:
         self.list_of_guesses = []
         self.word_guessed_string = ""
     
-    def check_guess(self, guess): 
+    def check_guess(self, guess):
+        """Checks the guess made by the player.
+
+        Args:
+            guess (str): a letter inputted by the player. 
+
+        Returns:
+            none
+        """
         guess.lower()
         if guess in self.word:
             self.list_of_guesses.append(guess)
@@ -25,7 +35,15 @@ class Hangman:
             print(f"\nSorry, {guess} is not in the word.") 
             print(f"You have {self.num_lives} lives left.")
 
-    def ask_for_input(self): # method requests input and checks validity.
+    def ask_for_input(self): 
+        """Requests input and checks input validity.
+
+        Args:
+            none
+        
+        Returns: 
+            none
+        """
         while True:
             guess = input("\nPlease enter a letter:")
             if not guess.isalpha() or len(guess) != 1: # if the guess is a non-aphabetical character or longer than one charchter, retrun the error message in line 32.
@@ -37,6 +55,7 @@ class Hangman:
             else:
                 self.check_guess(guess)
                 break
+
 
 def play_game(word):
     num_lives = 10
